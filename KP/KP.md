@@ -93,22 +93,58 @@
 
 ##### 4.1.1 Core Foundation
 
-- *sensor* and *actuators* (“判断”与“行动”）
+- *sensor* and *actuators* (“判断”与“行动”）
 
 - 核心：认知计算
 
 ##### 4.1.2 Cross-Domain and Multi-Domain Reasoning
 
-- 
+- KP独立诊断，跨域合作
+
+- 考虑信息争用
 
 ##### 4.1.3 Data and Knowledge Routing
 
-##### 4.1.4 Reasong abßout Trust and Robustness
+- 知识和信息管理，寻找最优解
+
+##### 4.1.4 Reasong about Trust and Robustness
+
+- 面临诸多问题与挑战
+
+  - 稳定性、可靠性
+
+  - KP的端口如何在网络中取得信任
 
 ### 5. Creating a KP
 
 #### 5.1 Possible Building Blocks
 
+- 架构的相关技术
+
+  - Epidemic algorithms：数据的传播
+
+  - Bayesian networks：KP的自我学习
+
+  - Rank aggregation：启用信任网络
+
+  - Constraint satisfaction algorithm
+
+  - Policy-based management techniques
+
 #### 5.2 Changes
 
+- 领域交叉（AI)
+
+  - 如何表示并利用好知识
+
+  - 如何保证可扩展性
+
+  - 怎样散发这些知识
+
+  - 如何面对商业竞争，避免成为商业工具
+
+  - 如何保证安全和可信任
+
 ### 6. Summary
+
+- 在人工智能的大浪潮之下，一种新型的网络架构模型被提出势在必行。文章提出了一种新型网络模式——知识平面（KP）。是一种具有高度智能的网络模式，完全不同于现有的网络模式——一种只负责传输数据的“工具”，可感知、预测、处理并学习所遇到的常见网络问题，并为用户提供解决方案。
