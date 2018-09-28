@@ -77,7 +77,7 @@
 
   - 自底向上
 
-  - 限制驱动
+  - 面向限制
 
   - 由简入繁
 
@@ -121,7 +121,7 @@
 
 - 架构的相关技术
 
-  - Epidemic algorithms：数据的传播
+  - Epidemic algorithms：数据的分发传播
 
   - Bayesian networks：KP的自我学习
 
@@ -134,6 +134,8 @@
 #### 5.2 Changes
 
 - 领域交叉（AI)
+
+- 挑战：
 
   - 如何表示并利用好知识
 
