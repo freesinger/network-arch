@@ -110,7 +110,7 @@
 
 - *2*  mechanisms:
 
-  - Modify the OS to use high resolution timers: facilitate RTO timers with the **granularity（粒度）**of hundreds of  microseconds
+  - Modify the OS to use high resolution timers: facilitate RTO timers with the **granularity(粒度)** of hundreds of  microseconds
 
   - Turn off delayef ACKs wherever possible:  disabling de- layed ACKs is expected to improve performance for RTO timer values of 40ms or less
 
@@ -149,7 +149,7 @@
 
 - ##### Three distinct regions in the goodput graph in Figure 5 as follows:
 
-![Goodput for various minimum RTO values](Goodput for various minimum RTO values.png)
+![Goodput for various minimum RTO values.png](https://github.com/freesinger/network-arch/blob/master/Courses/TCP_Incast/Goodput%20for%20various%20minimum%20RTO%20values.png?raw=true)
 
 1. **Initial goodput collapse**:  The number of RTO events increases and the number of senders increases.
 
@@ -157,7 +157,7 @@
 
 3. **Goodput decreases again**:  As the number of senders increases, T would eventually become comparable or even larger than the value of RTO timers.  A possible consequence is increased inter-packet wait time, leading to the behavior in Figure 16, and a gradual decrease in goodput.
 
-- ![RTO counts and average inter-packet idle time for 1ms and 200ms min RTO](RTO counts and average inter-packet idle time for 1ms and 200ms min RTO.png)
+- ![RTO counts and average inter-packet idle time for 1ms and 200ms min RTO.png](https://github.com/freesinger/network-arch/blob/master/Courses/TCP_Incast/RTO%20counts%20and%20average%20inter-packet%20idle%20time%20for%201ms%20and%20200ms%20min%20RTO.png?raw=true)
 
 - ##### Explain details in goodput graph:
 
