@@ -2,11 +2,11 @@
 
 ### Abstract
 
-- TCP Throughput Collapse, also known as Incast, is a patho- logical behavior of TCP that results in gross under-utilization of link capacity in certain **many-to-one**（多对一通信） communication pat- terns.
+- TCP Throughput Collapse, also known as Incast, is a pathological behavior of TCP that results in gross under-utilization of link capacity in certain **many-to-one**（多对一通信） communication patterns.
 
 - ![TCP Incast](http://bradhedlund.s3.amazonaws.com/2011/tcp-incast/tcp-incast.png)
 
-- An analytical model: 
+- An analytical model:
 
   - Observed Incast symptoms
 
@@ -34,7 +34,7 @@
 
 - The Incast pathology（病理）
 
-  - **Reducing the mini- mum value of the retransmission timeout (RTO) timer** from the default 200ms to 200μs, however  most systems lack the high-resolution timers required for such low RTO values.
+  - **Reducing the minimum value of the retransmission timeout (RTO) timer** from the default 200ms to 200μs, however  most systems lack the high-resolution timers required for such low RTO values.
 
   - Switches and routers with large buffers are **expensive**, and even large buffers may be filled up quickly with ever higher speed links.
 
@@ -42,7 +42,7 @@
 
 - A key shortcoming of the prior work is the **lack of an analytical model to understand the Incast phenomenon**.
 
-- **Cost concerns and the preference for existing technology** mean that solutions like Infiniband and custom transport protocols are less attractive. 
+- **Cost concerns and the preference for existing technology** mean that solutions like Infiniband and custom transport protocols are less attractive.
 
 - Hence our focus on **TCP solutions**.
 
@@ -60,7 +60,7 @@
 
 - Combination of tools:
 
-  - tcpdump and tcptrac
+  - tcpdump and tcptrace
 
   - analysis tool in Java to fill up gaps
 
@@ -94,17 +94,17 @@
 
 #### 5.1 Different RTO Timers
 
-- *Smaller* minimum RTO timer values: 
+- *Smaller* minimum RTO timer values:
 
   - larger values for the initial goodput minimum
 
-  - faster goodput “recovery” between the initial goodput minimum and the subsequent goodput local maxi- mum
+  - faster goodput “recovery” between the initial goodput minimum and the subsequent goodput local maximum
 
 - *Larger* minimum RTO timer values:
 
   - the goodput local maximum occurs at a larger number of senders
 
-- The initial goodput minimum oc- curs at the same number of senders, **regardless of** minimum RTO timer values.
+- The initial goodput minimum occurs at the same number of senders, **regardless of** minimum RTO timer values.
 
 #### 5.2 Delayed ACKs and High Resolution Timers
 
@@ -112,7 +112,7 @@
 
   - Modify the OS to use high resolution timers: facilitate RTO timers with the **granularity(粒度)** of hundreds of  microseconds
 
-  - Turn off delayef ACKs wherever possible:  disabling de- layed ACKs is expected to improve performance for RTO timer values of 40ms or less
+  - Turn off delayef ACKs wherever possible:  disabling delayed ACKs is expected to improve performance for RTO timer values of 40ms or less
 
 - The increased number of smoothed RTT spikes represent more frequent, unnecessary congestion timeout events, another piece of evidence that indicates that **the congestion window is being over-driven when delay ACKs are turned off**.
 
@@ -120,18 +120,18 @@
 
 - The **variable-fragment workload** does not fully reflect the complex dynamics of the incast pathology.
 
-- First, whatever sub-optimal behavior we see with regard to delayed ACKs is **workload independent**. 
+- First, whatever sub-optimal behavior we see with regard to delayed ACKs is **workload independent**.
 
-- Second, because our results are different from [11\], and we ensured that all application and transport level parameters are **reproduced**, the different results suggest that the **different network environment associated with a differ- ent testbed** would **play a part**. 
+- Second, because our results are different from [11\], and we ensured that all application and transport level parameters are **reproduced**, the different results suggest that the **different network environment associated with a different testbed** would **play a part**.
 
-- Also, in agreement with the observation in Figure 6, the sub-optimal behavior for 200us RTO value is **independent** of the presence or absence of de- layed ACKs.
+- Also, in agreement with the observation in Figure 6, the sub-optimal behavior for 200us RTO value is **independent** of the presence or absence of delayed ACKs.
 
 ### 6. Quantitative Models
 
 #### 6.1 Model Description
 
 - *2* critical insights into potential TCP fixes to help address the Incast problem:
-  - For large RTO timer values, **reducing the RTO timer** value is a first-order mitigation. 
+  - For large RTO timer values, **reducing the RTO timer** value is a first-order mitigation.
 
   - For smaller RTO timer values, **intelligently controlling the inter-packet wait time** becomes crucial.
 
@@ -165,13 +165,13 @@
 
    Explanation: The default TCP RTO timer value is much larger than the network round trip time in datacenters. Hence, **smaller RTO timers mean that the impact of RTO events is less severe.**
 
-2. The initial goodput minimum occurs at the same number of senders, regardless of the value of the min- imum RTO timer.
+2. The initial goodput minimum occurs at the same number of senders, regardless of the value of the minimum RTO timer.
 
    Explanation: The initial goodput minimum roughly corresponds to the transition point in R in Figure 16. The transition point is at roughly the same number of senders for all RTO timer values. **Hence the goodput minimum is roughly the same for all RTO timer values.**
 
 3. The second order goodput peak occurs at a higher number of senders for a larger RTO timer value.
 
-   Explanation: The second order maximum corresponds to the trade-off between incremental goodput increases with more senders and increases of T causing interference with retransmissions. **The cross over point depends on both the number of senders and the RTO timer value.** In particular, larger RTO timer values would require larger T for the effects to cross over. If the increase in T depends on the number of senders only, then the second order goodput peak would occur at more senders for larger RTO timer values. 
+   Explanation: The second order maximum corresponds to the trade-off between incremental goodput increases with more senders and increases of T causing interference with retransmissions. **The cross over point depends on both the number of senders and the RTO timer value.** In particular, larger RTO timer values would require larger T for the effects to cross over. If the increase in T depends on the number of senders only, then the second order goodput peak would occur at more senders for larger RTO timer values.
 
 4. The smaller the RTO timer values, the faster the rate of recovery between the goodput minimum and the second order goodput maximum.
 
@@ -181,13 +181,13 @@
 
    Explanation: **When T becomes comparable or larger than the RTO timer value, the amount of interference between retransmits after RTO and transmissions before RTO no longer depends on the value of the RTO timer.** The amount of interference increases with the number of senders at a fixed rate, leading to a fixed rate of goodput degradation after the second order goodput maximum.
 
-### 7\. Conclusions and Future Work
+### 7. Conclusions and Future Work
 
 ##### For a better understing of the dynamics of Incast:
 
 - [ ] Conducte experiments on a configurable network testbed, enabling fine-grained control over end hosts and the network.
 
-- [ ] Based on analysis of empirical data, we account for the dif- ference between our observations and that in related work. 
+- [ ] Based on analysis of empirical data, we account for the difference between our observations and that in related work.
 
 - [ ] Propose a simple mathematical model to explain some of the observed trends.
 
@@ -199,7 +199,7 @@
 
 - [ ] **Employ machine learning** to help to identify the most important control variables to examine.
 
-- [ ] If we are able to **identify a small set of core parameters of interest**, we may also be able to construct cor- relations between the parameters. These correlations, in turn, may allow us to **develop control models that fundamentally depart from the ACK-clocked nature of TCP.**
+- [ ] If we are able to **identify a small set of core parameters of interest**, we may also be able to construct correlations between the parameters. These correlations, in turn, may allow us to **develop control models that fundamentally depart from the ACK-clocked nature of TCP.**
 
 - [ ] **Evaluate our mechanisms** for different applications, environments, network equipment, and network topologies to validate the fixs author proposed.
 
