@@ -108,12 +108,50 @@
 
 #### 5.2 Delayed ACKs and High Resolution Timers
 
+- *2*  mechanisms:
+
+  - Modify the OS to use high resolution timers: facilitate RTO timers with the **granularity（粒度）**of hundreds of  microseconds
+
+  - Turn off delayef ACKs wherever possible:  disabling de- layed ACKs is expected to improve performance for RTO timer values of 40ms or less
+
+- The increased number of smoothed RTT spikes represent more frequent, unnecessary congestion timeout events, another piece of evidence that indicates that **the congestion window is being over-driven when delay ACKs are turned off**.
+
 #### 5.3 Workload and Testbed
+
+- The **variable-fragment workload** does not fully reflect the complex dynamics of the incast pathology.
+
+- First, whatever sub-optimal behavior we see with regard to delayed ACKs is **workload independent**. 
+
+- Second, because our results are different from [11\], and we ensured that all application and transport level parameters are **reproduced**, the different results suggest that the **different network environment associated with a differ- ent testbed** would **play a part**. 
+
+- Also, in agreement with the observation in Figure 6, the sub-optimal behavior for 200us RTO value is **independent** of the presence or absence of de- layed ACKs.
 
 ### 6. Quantitative Models
 
 #### 6.1 Model Description
 
+- *2* critical insights into potential TCP fixes to help address the Incast problem:
+
+  -  For large RTO timer values, **reducing the RTO timer** value is a first-order mitigation. 
+
+  - For smaller RTO timer values, **intelligently controlling the inter-packet wait time** becomes crucial.
+
 #### 6.2 Qualitative Refinements
+
+- ##### Several elements to the refinements:
+
+1. As the number of senders increase, the number of RTO events per sender increases. **Beyond a certain number of senders**, the number of RTO events is **constant**.
+
+2.  When a network resource becomes saturated, it is **saturated at the same time for all senders.**
+
+3.  **After a congestion event, the senders enter the TCP RTO state**. The RTO timer expires at each sender with a uniform distribution in time and a constant delay after the congestion event.
+
+4. T（T is the width of the uniform distribution in time） increases as the number of senders increases. However, T is bounded.
+
+    
+
+- ##### Three distinct regions in the goodput graph:
+
+1. 
 
 ### 7. Conclusions and Future Work
