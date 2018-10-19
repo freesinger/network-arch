@@ -110,7 +110,7 @@
 
 - *2*  mechanisms:
 
-  - Modify the OS to use high resolution timers: facilitate RTO timers with the **granularity(粒度)** of hundreds of  microseconds
+  - Modify the OS to use high resolution timers: facilitate RTO timers with the **granularity(粒度)** of hundreds of  microseconds
 
   - Turn off delayef ACKs wherever possible:  disabling de- layed ACKs is expected to improve performance for RTO timer values of 40ms or less
 
@@ -177,7 +177,7 @@
 
    Explanation: For smaller RTO timer values, the same increase in T will have a larger mitigating effect. **Hence, as the number of senders increases, the same increase in T will result in a faster increase in the goodput for smaller RTO timer values.**
 
-5. After the second order goodput maximum, the slope（坡） of goodput decrease is the same for different RTO timer values.
+5. After the second order goodput maximum, the slope(坡) of goodput decrease is the same for different RTO timer values.
 
    Explanation: **When T becomes comparable or larger than the RTO timer value, the amount of interference between retransmits after RTO and transmissions before RTO no longer depends on the value of the RTO timer.** The amount of interference increases with the number of senders at a fixed rate, leading to a fixed rate of goodput degradation after the second order goodput maximum.
 
@@ -187,7 +187,7 @@
 
 - [ ] Conducte experiments on a configurable network testbed, enabling fine-grained control over end hosts and the network.
 
-- [ ]  Based on analysis of empirical data, we account for the dif- ference between our observations and that in related work. 
+- [ ] Based on analysis of empirical data, we account for the dif- ference between our observations and that in related work. 
 
 - [ ] Propose a simple mathematical model to explain some of the observed trends.
 
@@ -195,16 +195,14 @@
 
 - [ ] Extend the model to quantitatively for all goodput trends, to make TCP protocal more general and robust
 
-- [ ]  The first step in this design process would be to **narrow down the range of TCP variables of interest**. Some variables are inter-dependent with others, some variables may have no impact on goodput at all.
+- [ ] The first step in this design process would be to **narrow down the range of TCP variables of interest**. Some variables are inter-dependent with others, some variables may have no impact on goodput at all.
 
 - [ ] **Employ machine learning** to help to identify the most important control variables to examine.
 
-- [ ]  If we are able to **identify a small set of core parameters of interest**, we may also be able to construct cor- relations between the parameters. These correlations, in turn, may allow us to **develop control models that fundamentally depart from the ACK-clocked nature of TCP.**
+- [ ] If we are able to **identify a small set of core parameters of interest**, we may also be able to construct cor- relations between the parameters. These correlations, in turn, may allow us to **develop control models that fundamentally depart from the ACK-clocked nature of TCP.**
 
 - [ ] **Evaluate our mechanisms** for different applications, environments, network equipment, and network topologies to validate the fixs author proposed.
 
 - [ ] Investigate the associated tradeoffs, and evaluate our solutions using real life workloads.
 
-- [ ]  In the long term, we will also use our understanding to **construct a detection signature or benchmark** that would be used to **assess whether specific applications or workloads are affected by Incast**.
-
-
+- [ ] In the long term, we will also use our understanding to **construct a detection signature or benchmark** that would be used to **assess whether specific applications or workloads are affected by Incast**.
