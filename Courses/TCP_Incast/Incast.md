@@ -150,8 +150,20 @@
 
     
 
-- ##### Three distinct regions in the goodput graph:
+- ##### Three distinct regions in the goodput graph in Figure 5 as follows:
 
-1. 
+![Goodput for various minimum RTO values.png](https://github.com/freesinger/network-arch/blob/master/Courses/TCP_Incast/Goodput%20for%20various%20minimum%20RTO%20values.png?raw=true)
+
+ 
+
+1. **Initial goodput collapse**:  The number of RTO events increases and the number of senders increases.
+
+2. **Goodput recovery**: The effective value of the RTO timer would be reduced as the number of senders increases.
+
+3. **Goodput decreases again**:  As the number of senders increases, T would eventually become comparable or even larger than the value of RTO timers.  A pos- sible consequence is increased inter-packet wait time, leading to the behavior in Figure 16, and a gradual decrease in goodput.
+
+- 
+
+
 
 ### 7. Conclusions and Future Work
