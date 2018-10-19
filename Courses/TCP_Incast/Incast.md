@@ -185,7 +185,7 @@
 
 ##### For a better understing of the dynamics of Incast:
 
-- [ ] Conducte experiments on a configurable network testbed, enabling fine-grained control over end hosts and the network.
+- [ ] Conduct experiments on a configurable network testbed, enabling fine-grained control over end hosts and the network.
 
 - [ ] Based on analysis of empirical data, we account for the difference between our observations and that in related work.
 
