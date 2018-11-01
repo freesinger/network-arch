@@ -22,7 +22,7 @@ In this paper, we explore a design point that is less extreme than BGP by propos
 
 #### 2.2 Basic Design Issues
 
-![Distinctions between HLP and BGP](Distinctions between HLP and BGP.png)
+![Distinctions between HLP and BGP.png](https://github.com/freesinger/network-arch/blob/master/Courses/HLP/Distinctions%20between%20HLP%20and%20BGP.png?raw=true)
 
 ##### 2.2.1 Routing Structure
 
@@ -140,7 +140,7 @@ For example, in the simple case where inter-AS links are assigned uniformly in t
 
 We define convergence time as the interval of time (assuming certain propagation delays along the links) it takes the entire network to reflect a particular route change, e.g.,a new route becomes available, a route has disappeared, or a route has changed.
 
-**Theorem 3**: *For a given destination D, let k(D) represent the maximum number of peering links in any HLP route advertisement to destination D. Under the assumption that every AS adheres to the HLP route propagation rules, if an event E affects destination D, then the route updates to D triggered by event E will converge within a maximum time of O(nk(D)).**
+**Theorem 3**: *For a given destination D, let k(D) represent the maximum number of peering links in any HLP route advertisement to destination D. Under the assumption that every AS adheres to the HLP route propagation rules, if an event E affects destination D, then the route updates to D triggered by event E will converge within a maximum time of O(nk(D)).*
 
 ### 5. Traffic Engineering ans Policy Support
 
